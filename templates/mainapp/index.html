@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+    <br>
+    <h1>Welcome, buy whatever you want</h1><br>
+
+    <div class="row">
+        {% for item in all_items %}
+          <div class="col-md-4">
+            <div class="card">
+              <h5 class="card-header">#{{ item.id }}</h5>
+              <div class="card-body">
+                <h5 class="card-title">{{ item.name }}</h5>
+                <a class="stretched-link" href="{% url 'item' item.pk %}"></a>
+              </div>
+            </div><br>
+  
+          </div>
+          {% endfor %}
+      </div>
+
+          
+
+
+{% endblock %}
