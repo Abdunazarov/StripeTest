@@ -1,6 +1,9 @@
 # Introduction
 This project implements Stripe's Web APIs using python for making online payments
 
+## Testing link
+You can have a look and test the app [here in pythonanywhere](http://teststripe.pythonanywhere.com/)
+
 ## Installation & creating virtual env
 Create a virtual env in order to install required libraries
 
