@@ -27,3 +27,5 @@ python manage.py runserver
 
 ## Walkthrough
 There should be Item objects in the home page (`http://127.0.0.1:8000/`), click to an item, it redirects you to `http://127.0.0.1:8000/item/<id>` page. Here, you can press the `buy` button, which return the Stripe's checkout page, where you can fill the form details.
+Also, you may add multiple items to an order using the admin page. Login in to the admin page and head to the `Orders` section and select multiple items.
+After creating you can see them under `Orders` on the home page, click `Buy all`, which will redirect you to Stripe's checkout page.
