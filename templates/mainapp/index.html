@@ -2,6 +2,16 @@
 
 {% block body %}
 
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <p class="alert alert-success">{{ message }}</p>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+
     <br>
     <h1>Welcome, buy whatever you want</h1><br>
 
@@ -18,6 +28,25 @@
   
           </div>
           {% endfor %}
+      </div><hr>
+
+        <h1>Orders</h1><br>
+      <div class="row">
+        <div class="row">
+          {% for order in orders %}
+            <div class="col-md-4">
+              <div class="card">
+                <h5 class="card-header">#{{ order.id }}</h5>
+                <div class="card-body">
+                  <h5 class="card-title">Overall price: {{ order.overall_price }}$</h5>
+
+                  <form action="{% url 'buy_order' order.id %}" method="POST">{% csrf_token %}
+                    <button class="btn btn-primary">Buy all</button>
+                  </form>
+                </div>
+              </div><br>
+            </div>
+            {% endfor %}  
       </div>
 
           
